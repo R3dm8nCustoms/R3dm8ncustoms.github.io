@@ -199,28 +199,26 @@
 </footer>
 
 <script>
-document.getElementById('commissionForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const name = document.getElementById('name').value;
-  const size = document.getElementById('size').value;
-  const style = document.getElementById('style').value;
-  const budget = document.getElementById('budget').value;
-  const idea = document.getElementById('idea').value;
-  const message =
-`CUSTOM AF1 COMMISSION
+document.getElementById('customForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-Name: ${name}
+    const name = document.getElementById('name').value;
+    const size = document.getElementById('size').value;
+    const style = document.getElementById('style').value;
+    const budget = document.getElementById('budget').value;
+    const idea = document.getElementById('idea').value;
+
+    const subject = 'Custom Art Commission';
+    const body = `Name: ${name}
 Shoe size: ${size}
 Style: ${style}
 Budget: ${budget}
 
 Idea:
-${idea}
+${idea}`;
 
-Sent from the AF1 Customs website.`;
-
-  <a href="mailto:r3dm8ncustoms@gmail.com?subject=Custom%20Shoe%20Commission">Email Me Your Commission</a>
-  alert("Commission message copied! Paste it into your Instagram DM or email.");
+    window.location.href =
+        `mailto:redmoncustoms@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 </script>
 </body>
