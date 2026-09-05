@@ -200,8 +200,6 @@
 
 <script>
 function sendEmail() {
-   
-
     const name = document.getElementById('name').value;
     const size = document.getElementById('size').value;
     const style = document.getElementById('style').value;
@@ -210,19 +208,20 @@ function sendEmail() {
 
     const subject = 'Custom Art Commission';
 
-    const body = `Name: ${name}
-Shoe size: ${size}
-Style: ${style}
-Budget: ${budget}
+    const body =
+        'Name: ' + name +
+        '\nShoe size: ' + size +
+        '\nStyle: ' + style +
+        '\nBudget: ' + budget +
+        '\n\nIdea:\n' + idea;
 
-Idea:
-${idea}`;
-const gmailUrl =
-    'https://mail.google.com/mail/?view=cm&fs=1&to=r3dm8ncustoms@gmail.com'
-    + '&su=' + encodeURIComponent(subject)
-    + '&body=' + encodeURIComponent(body);
+    const gmailUrl =
+        'https://mail.google.com/mail/?view=cm&fs=1'
+        + '&to=r3dm8ncustoms@gmail.com'
+        + '&su=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
 
-window.location.href = gmailUrl;
+    window.location.href = gmailUrl;
 }
 </script>
 </body>
