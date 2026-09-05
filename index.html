@@ -110,7 +110,31 @@
 .next-step span{color:#e10600;font-weight:900;font-size:13px}
 .next-step h3{margin:0 0 7px;font-size:16px;letter-spacing:-.02em}
 .next-step p{margin:0!important;font-size:13px!important;color:#999!important}
+    .trust-strip{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+.trust-strip div{
+    border:1px solid var(--line);
+    padding:20px;
+    background:#0e0e0e;
+}
+.trust-strip strong{
+    display:block;
+    color:#e10600;
+    font-size:12px;
+    letter-spacing:.1em;
+    margin-bottom:6px;
+}
+.trust-strip span{
+    color:#999;
+    font-size:12px;
+    line-height:1.5;
+}
     @media(max-width:800px){
+      .trust-strip{grid-template-columns:1fr}
       .navlinks{gap:12px}.navlinks a:nth-child(2){display:none}
       .hero-grid,.commission{grid-template-columns:1fr;gap:30px}
       .hero{min-height:auto;padding-top:120px;padding-bottom:60px}
@@ -255,6 +279,22 @@
   </div>
 </div>
     </div>
+    <div class="trust-strip">
+  <div>
+    <strong>HAND-PAINTED</strong>
+    <span>Every pair individually made</span>
+  </div>
+
+  <div>
+    <strong>ONE-OFF DESIGN</strong>
+    <span>Built around your idea</span>
+  </div>
+
+  <div>
+    <strong>UK BASED</strong>
+    <span>Commission enquiries welcome</span>
+  </div>
+</div>
   </section>
 </main>
 
