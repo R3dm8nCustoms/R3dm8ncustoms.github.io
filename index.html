@@ -162,7 +162,7 @@
         <h2>MAKE YOUR<br>PAIR YOURS.</h2>
         <p>Got an idea? Tell me what you're imagining. This form creates a ready-to-send commission message on your device.</p>
       </div>
-      <form id="commissionForm" onsubmit="sendEmail(event)">
+      <form id="commissionForm">
         <div class="fields">
           <div><label for="name">Name</label><input id="name" required placeholder="Your name"></div>
           <div><label for="size">Shoe size</label><input id="size" required placeholder="e.g. UK 8"></div>
@@ -184,7 +184,7 @@
           </div>
           <div class="full"><label for="idea">Your idea</label><textarea id="idea" required placeholder="Describe the design you want..."></textarea></div>
         </div>
-        <button class="btn primary" type="submit">CREATE COMMISSION MESSAGE →</button>
+        <button class="btn primary" type="button" onclick="sendEmail()">CREATE COMMISSION MESSAGE</button>
         <p class="note">Tip: replace the contact details in the script with your Instagram/email before publishing.</p>
       </form>
     </div>
@@ -199,8 +199,8 @@
 </footer>
 
 <script>
-function sendEmail(event) {
-    event.preventDefault();
+function sendEmail() {
+   
 
     const name = document.getElementById('name').value;
     const size = document.getElementById('size').value;
