@@ -162,7 +162,7 @@
         <h2>MAKE YOUR<br>PAIR YOURS.</h2>
         <p>Got an idea? Tell me what you're imagining. This form creates a ready-to-send commission message on your device.</p>
       </div>
-      <form id="commissionForm">
+      <form id="commissionForm" onsubmit="sendEmail(event)">
         <div class="fields">
           <div><label for="name">Name</label><input id="name" required placeholder="Your name"></div>
           <div><label for="size">Shoe size</label><input id="size" required placeholder="e.g. UK 8"></div>
@@ -199,8 +199,8 @@
 </footer>
 
 <script>
-document.getElementById('comissionForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+function sendEmail(event) {
+    event.preventDefault();
 
     const name = document.getElementById('name').value;
     const size = document.getElementById('size').value;
@@ -209,6 +209,7 @@ document.getElementById('comissionForm').addEventListener('submit', function(e) 
     const idea = document.getElementById('idea').value;
 
     const subject = 'Custom Art Commission';
+
     const body = `Name: ${name}
 Shoe size: ${size}
 Style: ${style}
@@ -218,8 +219,12 @@ Idea:
 ${idea}`;
 
     window.location.href =
-        `mailto:redmoncustoms@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
+        'mailto:redmoncustoms@gmail.com?subject=' +
+        encodeURIComponent(subject) +
+        '&body=' +
+        encodeURIComponent(body);
+}
+</script>
 </script>
 </body>
 </html>
